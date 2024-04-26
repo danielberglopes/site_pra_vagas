@@ -12,3 +12,5 @@ Route::match(['get', 'post'], '/auth', [LoginController::class, 'auth'])->name('
 
 Route::get('/welcome', [LoginController::class, 'welcome']);
 
+
+Route::post('/post_criar');

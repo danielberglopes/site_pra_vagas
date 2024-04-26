@@ -28,6 +28,14 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 20px 0 darkgrey;
 }
+select{
+  border: none;
+    margin-top: 40px;
+    border-radius: 60px;
+    padding: 8px 0 8px 35px;
+    outline: none;
+    width: 100%;
+}
 
 form {
   position: absolute;

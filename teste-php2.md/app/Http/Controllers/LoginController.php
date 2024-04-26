@@ -21,8 +21,8 @@ class LoginController extends Controller
         // Authentication successful
         return view('welcome'); 
     } else {
-        // Authentication failed
-        dd('deu erro');
+        return redirect()->back()->with('error', 'Credenciais inválidas.')->withInput();
+
     }
 }
 

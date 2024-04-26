@@ -16,6 +16,10 @@
       <button id="btnSignup">Cadastra</button>
     </div>
   <h4>Link Vagas</h4>
+  @if(session('error'))
+    <p>{{ session('error') }}</p>
+@endif
+
     <form id="signin" action="{{route('login.auth')}}" method="post">
     @csrf
       <input type="text"  name="email" placeholder="Email" required />
@@ -26,17 +30,23 @@
       <button type="submit">login</button>
     </form>
 
-    <form id="signup">
-      <input type="text" placeholder="Email" required />
+    <form id="signup"  action="/post_criar" method="post" enctype="multipart/form-data">
+      @csrf
+      <input type="text"  name="name" placeholder="Email" required />
       <i class="fas fa-envelope iEmail"></i>
-      <input type="password" placeholder="Password" required />
+      <input type="password" name="password" placeholder="Password" required />
       <i class="fas fa-lock iPassword"></i>
-      <input type="password" placeholder="Password" required />
-      <i class="fas fa-lock iPassword2"></i>
-      <div class="divCheck">
-        <input type="checkbox" required />
-        <span>Terms</span>
-      </div>
+      <input type="text" name="email" placeholder="Nome" required />
+      <i class="fas fa-lock iPassword"></i>
+      <select name="categoria" id="categoria">
+
+
+    <option value="">Escolha uma categoria</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+</select>
+
+     
       <button type="submit">login</button>
     </form>
   </div>
