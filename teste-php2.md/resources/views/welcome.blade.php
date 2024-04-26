@@ -20,12 +20,12 @@
         <!-- pizza na lista -->
         <div class="pizza-item">
             <a href="">
-                <div class="pizza-item--img"><img src="" /></div>
+                <div class="pizza-item--img"><img src="images/pizza.png" /></div>
                 <div class="pizza-item--add">+</div>
             </a>
-            <div class="pizza-item--price">R$ --</div>
-            <div class="pizza-item--name">--</div>
-            <div class="pizza-item--desc">--</div>
+            <div class="pizza-item--price">R$ </div>
+            <div class="pizza-item--name">Mussarela</div>
+            <div class="pizza-item--desc">Molho de tomate, camada dupla de mussarela e orégano</div>
         </div>
 
         <!-- pizza no carrinho -->
@@ -45,7 +45,7 @@
     <!-- .menu-openner aparecera no modo mobile -->
     <header>
         <h1>link vagas</h1>
-        <div class="menu-openner"><span>0</span>🛒</div>
+   
     </header>
     <!-- /menu-openner -->
 
@@ -55,7 +55,29 @@
  
     <main>
 
-        <div class="pizza-area"></div>
+        <div class="pizza-area">
+        <div class="pizza-item">
+            <a href="">
+                <div class="pizza-item--img"><img src="img/pizza.png" /></div>
+                <div class="pizza-item--add">+</div>
+            </a>
+            <div class="pizza-item--price">R$ 25.00</div>
+            <div class="pizza-item--name">Mussarela</div>
+            <div class="pizza-item--desc">Molho de tomate, camada dupla de mussarela e orégano</div>
+        </div>
+
+        <div class="pizza-item">
+            <a href="">
+                <div class="pizza-item--img"><img src="img/pizza.png" /></div>
+                <div class="pizza-item--add">+</div>
+            </a>
+            <div class="pizza-item--price">R$ 25.00</div>
+            <div class="pizza-item--name">Mussarela</div>
+            <div class="pizza-item--desc">Molho de tomate, camada dupla de mussarela e orégano</div>
+        </div>
+        </div>
+
+        
     </main>
     <!-- /conteudo principal -->
 
@@ -118,9 +140,11 @@
             </div>
         </div>
     </div>
-  
+    <script src="js\banco.js"></script>
+    <script src="js\pizza.js"></script>
 
-    <script src="{{(asset('js\banco.js'))}}"></script> 
+
+  
 
 </body>
 </html>

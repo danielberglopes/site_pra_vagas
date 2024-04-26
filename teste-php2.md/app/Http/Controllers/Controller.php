@@ -6,7 +6,5 @@ abstract class Controller
 {
     
 
-    publiC function login(){
-        return view('login');
-    }
+   
 }
