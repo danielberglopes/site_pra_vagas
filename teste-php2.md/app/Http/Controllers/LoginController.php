@@ -19,12 +19,16 @@ class LoginController extends Controller
 {
     if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
         // Authentication successful
-        dd('deu certo');// Redirect to dashboard or any other route
+        return view('welcome'); 
     } else {
         // Authentication failed
         dd('deu erro');
     }
 }
 
+
+public function welcome(){
+    return view('/welcome');
+}
 
 }
