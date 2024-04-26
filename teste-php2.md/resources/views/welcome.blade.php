@@ -24,8 +24,10 @@
                 <div class="pizza-item--add">+</div>
             </a>
             <div class="pizza-item--price">R$ </div>
-            <div class="pizza-item--name">Mussarela</div>
-            <div class="pizza-item--desc">Molho de tomate, camada dupla de mussarela e orégano</div>
+            <div class="pizza-item--name">Desenvolvedor React.Js</div>
+            <div class="pizza-item--desc">Dessenvolver e implementar interfaces de usuario altamente responsivas  utilizando react.js 
+                coloborar com desegner e Desenvolvedores de back-end para criar solucoes
+            </div>
         </div>
 
         <!-- pizza no carrinho -->
@@ -45,7 +47,7 @@
     <!-- .menu-openner aparecera no modo mobile -->
     <header>
         <h1>link vagas</h1>
-   
+    <div class="logo"><img src="{{asset('img\avatar.png')}}" alt=""></div>
     </header>
     <!-- /menu-openner -->
 
@@ -58,23 +60,39 @@
         <div class="pizza-area">
         <div class="pizza-item">
             <a href="">
-                <div class="pizza-item--img"><img src="img/pizza.png" /></div>
+                <div class="pizza-item--img"><img   style="    border-radius: 166px;
+                    height: 214px;
+                }" src="img\torcedores-do-paraná-vocês-deixariam-alguma-empresa-de-v0-mba2lqodphlb1.webp" /></div>
                 <div class="pizza-item--add">+</div>
             </a>
-            <div class="pizza-item--price">R$ 25.00</div>
-            <div class="pizza-item--name">Mussarela</div>
-            <div class="pizza-item--desc">Molho de tomate, camada dupla de mussarela e orégano</div>
+            <div class="pizza-item--price" style="margin-top: 6px">Remoto</div>
+            <div class="pizza-item--name">Desenvolvedor React.Js</div>
+            <div class="pizza-item--desc">
+                </div>
         </div>
-
         <div class="pizza-item">
             <a href="">
-                <div class="pizza-item--img"><img src="img/pizza.png" /></div>
+                <div class="pizza-item--img"><img   style="    border-radius: 166px;
+                    height: 214px;
+                }" src="img\torcedores-do-paraná-vocês-deixariam-alguma-empresa-de-v0-mba2lqodphlb1.webp" /></div>
                 <div class="pizza-item--add">+</div>
             </a>
-            <div class="pizza-item--price">R$ 25.00</div>
-            <div class="pizza-item--name">Mussarela</div>
-            <div class="pizza-item--desc">Molho de tomate, camada dupla de mussarela e orégano</div>
+            <div class="pizza-item--price" style="margin-top: 6px">Remoto</div>
+            <div class="pizza-item--name">Desenvolvedor React.Js</div>
+            <div class="pizza-item--desc">
+                </div>
         </div>
+        <div class="pizza-item">
+            <a href="">
+                <div class="pizza-item--img"><img   style="    border-radius: 166px;
+                    height: 214px;
+                }" src="img\torcedores-do-paraná-vocês-deixariam-alguma-empresa-de-v0-mba2lqodphlb1.webp" /></div>
+                <div class="pizza-item--add">+</div>
+            </a>
+            <div class="pizza-item--price" style="margin-top: 6px">Remoto</div>
+            <div class="pizza-item--name">Desenvolvedor React.Js</div>
+            <div class="pizza-item--desc">
+                </div>
         </div>
 
         
@@ -107,7 +125,7 @@
     <!-- /aside do carrinho -->
 
     <!-- janela modal .pizzaWindowArea -->
-    <div class="pizzaWindowArea">
+    <div class="pizzaWindowArea" >
         <div class="pizzaWindowBody">
             <div class="pizzaInfo--cancelMobileButton">Voltar</div>
             <div class="pizzaBig">
@@ -144,7 +162,7 @@
     <script src="js\pizza.js"></script>
 
 
-  
+
 
 </body>
 </html>

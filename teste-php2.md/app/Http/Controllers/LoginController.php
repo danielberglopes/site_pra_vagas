@@ -19,6 +19,7 @@ class LoginController extends Controller
 {
     if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
         // Authentication successful
+      
         return view('welcome'); 
     } else {
         return redirect()->back()->with('error', 'Credenciais inválidas.')->withInput();
@@ -28,7 +29,27 @@ class LoginController extends Controller
 
 
 public function welcome(){
+    $user = Auth::user();
+    $userName = $user->name;
+
     return view('/welcome');
 }
 
+
+
+
+public function store(Request $request)
+{
+    // Validação dos dados do formulário (opcional)
+  
+    // Criação de um novo usuário com os dados fornecidos
+    $user = new User();
+    $user->name = $request->input('name');
+    $user->email = $request->input('email');
+    $user->password = bcrypt($request->input('password'));
+    $user->save();
+
+    // Redirecionamento para a página inicial ou outra página desejada
+    return redirect('/');
+}
 }

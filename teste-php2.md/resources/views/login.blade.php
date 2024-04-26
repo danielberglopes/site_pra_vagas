@@ -30,25 +30,22 @@
       <button type="submit">login</button>
     </form>
 
-    <form id="signup"  action="/post_criar" method="post" enctype="multipart/form-data">
+    <form id="signup" action="/post_criar" method="post" enctype="multipart/form-data">
       @csrf
-      <input type="text"  name="name" placeholder="Email" required />
+      <input type="text" name="email" placeholder="Email" required />
       <i class="fas fa-envelope iEmail"></i>
       <input type="password" name="password" placeholder="Password" required />
       <i class="fas fa-lock iPassword"></i>
-      <input type="text" name="email" placeholder="Nome" required />
-      <i class="fas fa-lock iPassword"></i>
-      <select name="categoria" id="categoria">
+      <input type="text" name="name" placeholder="Nome" required />
+      <i class="fas fa-user iUser"></i>
+      {{-- <select name="categoria" id="categoria" required>
+          <option value="">Escolha uma categoria</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+      </select> --}}
+      <button type="submit">Cadastrar</button>
+  </form>
 
-
-    <option value="">Escolha uma categoria</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-</select>
-
-     
-      <button type="submit">login</button>
-    </form>
   </div>
 <script src="js\login.js"></script>
 
