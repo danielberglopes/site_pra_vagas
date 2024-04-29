@@ -38,11 +38,13 @@
       <i class="fas fa-lock iPassword"></i>
       <input type="text" name="name" placeholder="Nome" required />
       <i class="fas fa-user iUser"></i>
-      {{-- <select name="categoria" id="categoria" required>
-          <option value="">Escolha uma categoria</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-      </select> --}}
+      <select name="funcionário_empresa" id="categoria" required>
+        
+    <option value="" disabled selected>Escolha uma opção</option>
+    <option value="1">Sou uma empresa</option>
+    <option value="2">Sou um funcionário</option>
+</select>
+
       <button type="submit">Cadastrar</button>
   </form>
 

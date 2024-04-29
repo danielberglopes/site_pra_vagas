@@ -88,6 +88,7 @@ h1, h2 {
 
 .pizza-area {
     display:grid;
+    margin-top: 59px;
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -136,7 +137,31 @@ h1, h2 {
 
 .pizza-item a:hover .pizza-item--add {
     background-color:#b71c1c;
+    
 }
+
+input{
+    height: 42px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+button
+{
+    color: #fff;
+    height: 42px;
+    width: 128px;
+    border-radius: 5px;
+    font-size: 19px;
+    background-color: #d32f2f;
+    border: 0px;
+}
+nav {
+    margin-top: 15px;
+    float: right; /* Alinha o elemento à direita */
+    margin-right: 20px; /* Adiciona margem à direita para separá-lo do limite da tela */
+}
+
 
 .pizza-item--price {
     font-size:15px;

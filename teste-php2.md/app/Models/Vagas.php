@@ -10,9 +10,16 @@ class Vagas extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nome_da_vaga',
-        ' descricao',
-        ' cidade',
-            ' local'
+       'user_id',
+       'nome_da_vaga',
+       'email',
+       'nome',
+       'telefone',
     ];
+
+
+    public function vagas()
+    {
+        return $this->hasMany(Vaga::class);
+    }
 }

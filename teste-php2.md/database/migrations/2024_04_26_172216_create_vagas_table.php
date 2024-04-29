@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('vagas', function (Blueprint $table) {
             $table->id();
-        $table->string(' nome_da_vaga',200);
-        $table->string('descricao',200);
-        $table->string('cidade',200);
-        $table->string('local',200);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+        $table->string('nome_da_vaga',200);
+        $table->string('email',200);
+        $table->string('nome',200);
+        $table->string('telefone',200);
         $table->timestamps();
         });
     }
