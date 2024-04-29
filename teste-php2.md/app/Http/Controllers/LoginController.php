@@ -24,17 +24,18 @@ class LoginController extends Controller
          $funcionário_empresa = $user->funcionário_empresa;
          
 
-         if($funcionário_empresa == 1){
-            $posts=Post::all();
-            return view('/index')->with('posts',$posts);
-         }
+         if ($funcionário_empresa == 1) {
+            $posts = Post::paginate(10);
+            
+            return view('index')->with('posts', $posts);
+        }
+        
         elseif($funcionário_empresa == 2){
             $filtro = $request->input('author'); 
   
             $posts = Post::where('author', 'like', '%' . $filtro . '%')->get();
-         
-          
            
+       
             return view('welcome')->with('posts',$posts);
         }
         return redirect()->back()->with('error', 'Credenciais inválidas.')->withInput();

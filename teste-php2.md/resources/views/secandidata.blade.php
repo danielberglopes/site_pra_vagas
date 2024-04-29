@@ -54,12 +54,12 @@
       <form class="row g-3" method="POST" action="{{ route('candidatura_criar') }}">
       @csrf
 
-      <div class="col-md-6" >
+      <div class="col-md-6" style="display: none">
       <input type="text" name="user_id" class="form-control" id="inputEmail4" value="{{ $idCandidato }}">
 
   </div>
 
-  <div class="col-md-6" s>
+  <div class="col-md-6" style="display: none">
   
   <input type="text" name="nome_da_vaga" class="form-control" id="inputEmail4" value="{{ $posts->author }}">
 </div>

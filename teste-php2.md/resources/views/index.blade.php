@@ -9,32 +9,7 @@
     <!-- Font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <style>
-        button {
-            color: #fff;
-            height: 42px;
-            width: 200px;
-            border-radius: 5px;
-            font-size: 19px;
-            background-color: #d32f2f;
-            border: 0px;
-        }
-        a {
-            color: #fff;
-            text-decoration: none;
-        }
-        a:hover {
-    color: #fff; /* Define a cor do texto para branco quando o link estiver em estado de hover */
-    text-decoration: none; /* Remove o sublinhado quando o link estiver em estado de hover */
-}
-
-        .fixed-bottom {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1030;
-        }
-    </style>
+   <link rel="stylesheet" href="css\index.css">
 </head>
 <body>
 
@@ -42,13 +17,50 @@
 
     <h3 class="text-center text-danger"><b>Divulgue suas vagas de emprego</b></h3>
 
-    <button><a href="/create">Publicar uma vaga</a></button>
-
    
- 
+ <br><br>
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+  
+         
+        </div>
+      </nav>
+    <br>
 
 
-    <br><br>
+
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/create"> <button>Publicar uma vaga</button>   </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active Vagas" aria-current="page" href="#" style="color:black">Vagas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link candidatos" href="{{route('filtra.candidatos')}}" style="color:black">Candidatos</a>
+              </li>
+              
+             
+            </ul>
+            <form class="d-flex" role="search" action="{{ route('filtra.empresa') }}" method="POST">
+                @csrf
+                <input class="form-control me-2" name="author"  type="search" placeholder="Digite.." aria-label="Search">
+                <button class="btn btn-primary" type="submit">Pesquisa</button>
+              </form>
+          </div>
+        </div>
+      </nav>
+
+
+
+      
     <table class="table table-bordered border-primary">
     <thead>
         <tr class="text-center">
@@ -71,10 +83,12 @@
               <button type="button" class="btn btn-primary"><a href="/edit/{{ $post->id }}" >Editar vaga</a></button></td>
                 <td class="align-middle text-center">
                     <form action="/delete/{{ $post->id }}" method="post">
-                        <button type="button" class="btn btn-danger" onclick="return confirm('tem certeza que desseja apaga essa vaga?');" type="submit">Deletar vaga</button>
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja apagar essa vaga?');">Deletar vaga</button>
                         @csrf
                         @method('delete')
                     </form>
+                    
+                    
                 </td>
             </tr>
 
@@ -84,6 +98,7 @@
 
     </tbody>
 </table>
+
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-end">
         <li class="page-item {{ ($posts->currentPage() == 1) ? ' disabled' : '' }}">

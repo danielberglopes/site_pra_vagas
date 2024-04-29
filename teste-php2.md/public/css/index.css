@@ -1,0 +1,23 @@
+button {
+    color: #fff;
+    height: 42px;
+    width: 200px;
+    border-radius: 5px;
+    font-size: 19px;
+    background-color: #d32f2f;
+    border: 0px;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+.candidatos{
+    font-size: 22px
+}
+.Vagas{
+    font-size: 22px;
+}
+a:hover {
+color: #fff; /* Define a cor do texto para branco quando o link estiver em estado de hover */
+text-decoration: none; /* Remove o sublinhado quando o link estiver em estado de hover */
+}

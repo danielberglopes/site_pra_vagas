@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\auth;
 use App\Models\Image;
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Vagas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -18,13 +19,34 @@ class PostController extends Controller
     public function index(Request $request)
     {
         // Fetch posts based on search filter if provided
- 
-        $posts = Post::paginate(10);
-
-
-    return view('index')->with('posts', $posts);
-        
+        $filtro = $request->input('author');
+    
+        $postsQuery = Post::query();
+    
+        if ($filtro) {
+            $postsQuery->where('author', 'like', '%' . $filtro . '%');
+        }
+    
+        $posts = $postsQuery->paginate(10);
+    
+        return view('index')->with('posts', $posts);
     }
+    
+    public function candidatos(Request $request){
+        $filtro = $request->input('name');
+    
+        $postsQuery = User::query();
+    
+        if ($filtro) {
+            $postsQuery->where('name', 'like', '%' . $filtro . '%');
+        }
+    
+        $posts = $postsQuery->paginate(20);
+        return view('candidatos')->with('posts', $posts);
+    }
+
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -179,24 +201,44 @@ public function candidatura (Request $request){
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
+    
+    
+
     public function destroy($id)
-    {
-         $posts=Post::findOrFail($id);
+{
+    $post = Post::findOrFail($id);
 
-         if (File::exists("cover/".$posts->cover)) {
-             File::delete("cover/".$posts->cover);
-         }
-         $images=Image::where("post_id",$posts->id)->get();
-         foreach($images as $image){
-         if (File::exists("images/".$image->image)) {
-            File::delete("images/".$image->image);
-        }
-         }
-         $posts->delete();
-         return back();
+    // Restante do seu código...
 
+    $post->delete();
+    // Obter a instância de Request
+    $request = request();
 
+    $filtro = $request->input('author');
+
+    $postsQuery = Post::query();
+
+    if ($filtro) {
+        $postsQuery->where('author', 'like', '%' . $filtro . '%');
     }
+
+    $posts = $postsQuery->paginate(10);
+
+    // Redirecionar de volta à página anterior
+    return view('index')->with('posts', $posts);
+}
+
+
+public function destroyCandidatos($id){
+    $user = User::findOrFail($id);
+    $user->delete();
+    
+    $usersQuery = User::query();
+    $users = $usersQuery->paginate(10);
+    
+    return view('candidatos')->with('posts', $users);
+}
+
 
     public function deleteimage($id){
         $images=Image::findOrFail($id);
